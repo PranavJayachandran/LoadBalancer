@@ -1,0 +1,5 @@
+- [ ] The public endpoints the consumer can call. They would start by calling addition, deletion, get and updation for some value in the kv.
+    - [ ] Write the endpoints for the same.
+    - [ ] For a given number of nodes, decide how the load would be balanced.
+- [ ] Should know which all nodes are currently available. So would need hearbeat for that.
+- [ ] how do we decide which ndoe to send the request to.
