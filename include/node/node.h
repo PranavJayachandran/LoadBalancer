@@ -1,15 +1,17 @@
 #pragma once
 
-#include<string>
-#include<utility>
-namespace load_balancer::node{
-  class Node{
-    std::string ip_;
-    std::string node_name_;
+#include <string>
+#include <utility>
 
-    public:
-      explicit Node(std::&string ip, std::&string node_name) : ip_(std::move(ip)), node_name_(std::move(node_name)) {}
-      const std::string& ip() const noexcept { return ip_; }
-      const std::string& node_name const noexcept { return node_name_; }
-  }
+namespace load_balancer::node {
+class Node {
+  std::string ip_;
+  std::string node_name_;
+
+public:
+  explicit Node(const std::string &ip, const std::string &node_name)
+      : ip_(std::move(ip)), node_name_(std::move(node_name)) {}
+  const std::string &ip() const noexcept { return ip_; }
+  const std::string &node_name() const noexcept { return node_name_; }
 };
+} // namespace load_balancer::node

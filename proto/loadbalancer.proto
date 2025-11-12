@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package loadbalancer;
+
+service LoadBalancerService{
+  rpc GetNodes(Empty) returns (Response);
+}
+
+message Empty {}
+
+message Response{
+  string ip = 1;
+}

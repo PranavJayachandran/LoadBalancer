@@ -1,27 +1,25 @@
 #pragma once
+#include "../external/json.hpp"
 #include <string>
-#include "external/json.hpp"
 
-class RequestData{
+class RequestData {
 
-  public:
+public:
   std::string key, value;
 
-  RequestData(){}
-  RequestData(const std::string& key, const std::string& value) : key(key), value(value){}
+  RequestData() {}
+  RequestData(const std::string &key, const std::string &value)
+      : key(key), value(value) {}
 
-  static RequestData from_json(const nlohmann::json& j){
+  static RequestData from_json(const nlohmann::json &j) {
     RequestData data;
-    if(j.contains("key"))  j.at("key").get_to(data.key);
-    if(j.contains("value")) j.at("value").get_to(data.value);
+    if (j.contains("key"))
+      j.at("key").get_to(data.key);
+    if (j.contains("value"))
+      j.at("value").get_to(data.value);
 
     return data;
   }
 
-  nlohmann::json to_json() const{
-    return {
-      {"key", key},
-      {"value", value}
-    };
-  }
+  nlohmann::json to_json() const { return {{"key", key}, {"value", value}}; }
 };
