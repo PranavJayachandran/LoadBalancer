@@ -1,6 +1,7 @@
 #include "../../include/server/grpc_server.h"
 #include <grpcpp/ext/proto_server_reflection_plugin.h>
 #include <iostream>
+#include <string>
 
 namespace loadbalancer::grpc_server {
 
@@ -11,8 +12,8 @@ grpc::Status LoadBalancerService::GetNodes(grpc::ServerContext *ctx,
   return grpc::Status::OK;
 }
 
-void RunServer() {
-  std::string address("0.0.0.0:50051");
+void RunServer(const std::string &port) {
+  std::string address("0.0.0.0:" + port);
   LoadBalancerService service;
 
   grpc::EnableDefaultHealthCheckService(true);

@@ -11,5 +11,5 @@ public:
                         const loadbalancer::Empty *request,
                         loadbalancer::Response *response) override;
 };
-void RunServer();
+void RunServer(const std::string &port);
 } // namespace loadbalancer::grpc_server
