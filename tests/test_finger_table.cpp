@@ -9,10 +9,10 @@ using namespace load_balancer::finger_table;
 TEST(FingerTableTest, updates_successor_for_nth_finger) {
 
   // Arrange
-  FingerTable *finger_table = new FingerTable();
+  FingerTable *finger_table = new FingerTable(1);
   const std::string test_ip = "test_ip";
   const std::string test_name = "test_name";
-  load_balancer::node::Node *node = new Node(test_ip, test_name);
+  load_balancer::node::Node *node = new Node(test_ip, test_name, 1);
   int n = log2(rand() % load_balancer::constants::BUCKETS);
 
   // Act
@@ -28,11 +28,11 @@ TEST(FingerTableTest,
      get_successor_for_node_with_value_n_Works_for_k_minus_one_th_power_of_2) {
 
   // Arrange
-  FingerTable *finger_table = new FingerTable();
+  FingerTable *finger_table = new FingerTable(1);
   const std::string test_ip = "test_ip";
   const std::string test_name = "test_name";
-  load_balancer::node::Node *node = new Node(test_ip, test_name);
-  load_balancer::node::Node *node2 = new Node(test_ip, test_name);
+  load_balancer::node::Node *node = new Node(test_ip, test_name, 1);
+  load_balancer::node::Node *node2 = new Node(test_ip, test_name, 1);
   int n = log2(rand() % (load_balancer::constants::BUCKETS - 1));
 
   // Act
@@ -51,11 +51,11 @@ TEST(
     get_successor_for_node_with_value_n_Works_for_all_values_between_k_minus_oneth_and_kth_power_of_2) {
 
   // Arrange
-  FingerTable *finger_table = new FingerTable();
+  FingerTable *finger_table = new FingerTable(1);
   const std::string test_ip = "test_ip";
   const std::string test_name = "test_name";
-  load_balancer::node::Node *node = new Node(test_ip, test_name);
-  load_balancer::node::Node *node2 = new Node(test_ip, test_name);
+  load_balancer::node::Node *node = new Node(test_ip, test_name, 1);
+  load_balancer::node::Node *node2 = new Node(test_ip, test_name, 1);
   int n = log2(rand() % (load_balancer::constants::BUCKETS - 1));
 
   // Act
