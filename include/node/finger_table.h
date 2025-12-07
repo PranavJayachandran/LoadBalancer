@@ -14,6 +14,7 @@ namespace load_balancer::finger_table {
 using load_balancer::node::Node;
 class FingerEntries {
   Node *successor = nullptr;
+  int start_value = 0;
 
 public:
   FingerEntries() = default;
@@ -40,7 +41,7 @@ public:
     entries[n].set_successor(node);
   }
 
-  const FingerEntries *get_nth_finger(int n) {
+  FingerEntries *get_nth_finger(int n) {
     assert(n < entries.size());
     return &entries[n];
   }
