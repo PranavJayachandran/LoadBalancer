@@ -12,7 +12,7 @@ TEST(FingerTableTest, updates_successor_for_nth_finger) {
   FingerTable *finger_table = new FingerTable(1);
   const std::string test_ip = "test_ip";
   const std::string test_name = "test_name";
-  load_balancer::node::Node *node = new Node(test_ip, test_name, 1);
+  load_balancer::node::Node *node = new Node(test_ip, test_name, 1, nullptr);
   int n = log2(rand() % load_balancer::constants::BUCKETS);
 
   // Act
@@ -31,8 +31,8 @@ TEST(FingerTableTest,
   FingerTable *finger_table = new FingerTable(1);
   const std::string test_ip = "test_ip";
   const std::string test_name = "test_name";
-  load_balancer::node::Node *node = new Node(test_ip, test_name, 1);
-  load_balancer::node::Node *node2 = new Node(test_ip, test_name, 1);
+  load_balancer::node::Node *node = new Node(test_ip, test_name, 1, nullptr);
+  load_balancer::node::Node *node2 = new Node(test_ip, test_name, 1, nullptr);
   int n = log2(rand() % (load_balancer::constants::BUCKETS - 1));
 
   // Act
@@ -54,8 +54,8 @@ TEST(
   FingerTable *finger_table = new FingerTable(1);
   const std::string test_ip = "test_ip";
   const std::string test_name = "test_name";
-  load_balancer::node::Node *node = new Node(test_ip, test_name, 1);
-  load_balancer::node::Node *node2 = new Node(test_ip, test_name, 1);
+  load_balancer::node::Node *node = new Node(test_ip, test_name, 1, nullptr);
+  load_balancer::node::Node *node2 = new Node(test_ip, test_name, 1, nullptr);
   int n = log2(rand() % (load_balancer::constants::BUCKETS - 1));
 
   // Act
